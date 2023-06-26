@@ -1,35 +1,21 @@
 <template>
   <div class="bg-slate-800">
+    <NavBar></NavBar>
     <main class="text-slate-100 container mx-auto p-4 h-[100%]">
     </main>
+    <router-view/>
 
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/admin">Admin</router-link>
-  </nav>
-  <router-view/>
   </div>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+// @ is an alias to /src
+import NavBar from '@/components/navigation/NavBar.vue'
 
-nav {
-  padding: 30px;
+export default {
+  name: 'HomeView',
+  components: {
+    NavBar
+  }
 }
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
-}
-</style>
+</script>
