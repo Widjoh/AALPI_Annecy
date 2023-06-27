@@ -1,17 +1,20 @@
 <template>
-  <div class="flex flex-col bg-white justify-center  p-20 sm:items-center">
-    <div class="flex flex-col items-center space-y-6">
-      <span class="text-6xl	">{{ titleAdvice }}</span>
-      <span>{{ subtitleAdvice }}</span>
+  <div class="flex flex-col  w-full  justify-center sm:items-center">
+    <div class="flex flex-col items-center ">
+      <MobileCard/>
+
     </div>
   </div>
 </template>
 
 <script>
+import MobileCard from '@/components/card/MobileCard.vue'
 
 export default {
   name: 'HeaderComponent',
-
+  components: {
+    MobileCard
+  },
   props: {
     titleAdvice: {
       type: String,
