@@ -1,6 +1,6 @@
 <template>
   <div class="bg-slate-800">
-    <NavBar></NavBar>
+    <NavBar class="mb-12"></NavBar>
     <main class="text-slate-100 container mx-auto p-4 h-[100%]">
     </main>
     <router-view/>
