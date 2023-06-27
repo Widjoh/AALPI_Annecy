@@ -14,9 +14,7 @@ export default {
   props: {
     mainData: {type: Object, required: true,},
   },
-  setup(props) {
-    console.log(props)
-
+  setup() {
   },
 };
 </script>

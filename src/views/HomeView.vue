@@ -1,11 +1,11 @@
 <template>
   <div class="home">
-    <div v-if="headerData">
-      <Header :title="headerData.title" :subtitle="headerData.subtitle"
-              :back-ground-colors="headerData.background_colors"/>
+    <div v-if="homeData">
+      <Header :title="homeData.header?.title" :subtitle="homeData.header?.subtitle"
+              :back-ground-colors="homeData.background_colors"/>
     </div>
-    <div v-if="mainData">
-      <Main :main-data="mainData"/>
+    <div v-if="homeData">
+      <Main :main-data="homeData.main"/>
     </div>
     <HelloWorld msg="Welcome to Your Vue.js App"/>
 
@@ -28,16 +28,13 @@ export default {
   },
   setup() {
 
-    const {headerData, loading, error, fetchHeaderData, fetchMainData, mainData} = useDataFetcher();
-    console.log(mainData)
+    const {homeData, loading, error, fetchHomeData} = useDataFetcher();
     onMounted(() => {
-      fetchHeaderData();
-      fetchMainData();
+      fetchHomeData();
     });
 
     return {
-      headerData,
-      mainData,
+      homeData,
       loading,
       error,
 
