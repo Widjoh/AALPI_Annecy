@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router';
+import {createRouter, createWebHistory} from 'vue-router';
 import Admin from '../views/Admin.vue';
 import Home from '../views/HomeView.vue';
 import Login from '../views/Login.vue';
@@ -14,7 +14,7 @@ const routes = [
         path: '/admin',
         name: 'admin',
         component: Admin,
-        meta: { requiresAuth: true },
+        meta: {requiresAuth: true},
     },
     {
         path: '/Login',
@@ -34,16 +34,33 @@ const router = createRouter({
 });
 
 // Add a navigation guard to check authentication status
-router.beforeEach((to, from, next) => {
-    const isAuthenticated = /* Check if the user is authenticated */ false;
+import axios from 'axios';
+
+router.beforeEach(async (to, from, next) => {
+    const isAuthenticated = !!localStorage.getItem('token');
 
     if (to.meta.requiresAuth && !isAuthenticated) {
-        // Redirect to the login page if the route requires authentication and the user is not authenticated
         next('/Login');
+    } else if (to.meta.requiresAuth && isAuthenticated) {
+        try {
+            const response = await axios.get(process.env.VUE_APP_ROOT_API + 'user', {
+                headers: {
+                    Authorization: `Bearer ${localStorage.getItem('token')}`
+                }
+            });
+            if (response.status === 200) {
+                next();
+            } else {
+                next('/Login');
+            }
+        } catch (error) {
+            console.error(error);
+            next('/Login');
+        }
     } else {
-        // Allow access to the route
         next();
     }
 });
+
 
 export default router;
