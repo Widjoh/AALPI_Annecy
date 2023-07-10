@@ -1,19 +1,18 @@
 <template>
-  <div class="flex flex-col justify-center p-12 sm:items-center relative ">
-    <div class="bg-[#E1E5EA] absolute left-0 right-0 top-0 h-[550px]"></div>
-    <Advice class="mb-20" :subtitle-advice="mainData.subtitle_advice" :title-advice="mainData.title_advice"/>
-    <Advice class="mt-6" :subtitle-advice="mainData.subtitle_advice" :title-advice="mainData.title_advice"/>
-
+  <div v-if="mainData" class="flex flex-col justify-center p-12 sm:items-center relative space-y-16">
+    <div v-for="data in mainData" :key="data.id">
+      <MobileCard :title="data.title" :subtitle="data.subtitle"/>
+    </div>
   </div>
 </template>
 
 <script>
-import Advice from '@/components/main/Advice.vue'
+import MobileCard from '@/components/card/MobileCard.vue'
 
 
 export default {
   name: 'MainComponent',
-  components: {Advice},
+  components: {MobileCard},
   props: {
     mainData: {type: Object, required: true,},
   },

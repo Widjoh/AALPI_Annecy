@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import Admin from '../views/Admin.vue';
 import Home from '../views/HomeView.vue';
 import Login from '../views/Login.vue';
+import PlayGround from '../views/Playground.vue';
 
 const routes = [
     {
@@ -19,6 +20,11 @@ const routes = [
         path: '/Login',
         name: 'Login',
         component: Login,
+    },
+    {
+        path: '/pricing',
+        name: 'tarifs',
+        component: PlayGround,
     },
 ];
 

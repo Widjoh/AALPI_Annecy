@@ -29,7 +29,6 @@ export default {
     onMounted(() => {
       fetchHomeData();
     });
-
     return {
       homeData,
       loading,
