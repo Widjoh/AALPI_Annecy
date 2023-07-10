@@ -1,7 +1,7 @@
 <template>
   <div class="bg-slate-800">
     <main class="text-slate-100 container mx-auto p-4 h-[100%]">
-      <span>HELLO</span>
+      <span>Bonjour JO</span>
     </main>
   </div>
 
@@ -11,7 +11,6 @@
 
 export default {
   name: 'UserAdmin',
-
 }
 </script>
 
