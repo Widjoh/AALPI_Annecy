@@ -40,6 +40,8 @@ import {computed, onMounted, ref} from 'vue'
 import {useDataFetcher} from "@/composables/UseDataFetcher.ts";
 import draggable from 'vuedraggable'
 import axios from "axios";
+import { notify } from "@kyvg/vue3-notification";
+
 
 
 export default {
@@ -85,8 +87,17 @@ export default {
         // Optionally, you can fetch the updated data from the API again
         //await fetchHomeData();
 
+        notify({
+          type: "success",
+          text: "L'ordre a été mis à jour",
+        });
         console.log('Item order updated successfully');
       } catch (error) {
+        console.log(error.request.response)
+        notify({
+          type: "error",
+          text: error.request.response.toString(),
+        });
         console.error('Failed to update item order', error);
       }
     }
