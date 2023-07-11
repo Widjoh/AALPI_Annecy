@@ -17,6 +17,12 @@ const routes = [
         meta: {requiresAuth: true},
     },
     {
+        path: '/admin/images',
+        name: 'adminImages',
+        component: Images,
+        meta: {requiresAuth: true},
+    },
+    {
         path: '/Login',
         name: 'Login',
         component: Login,
@@ -35,6 +41,7 @@ const router = createRouter({
 
 // Add a navigation guard to check authentication status
 import axios from 'axios';
+import Images from "@/views/Admin/Images.vue";
 
 router.beforeEach(async (to, from, next) => {
     const isAuthenticated = !!localStorage.getItem('token');
