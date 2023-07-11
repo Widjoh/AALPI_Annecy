@@ -6,6 +6,7 @@ import './index.css'
 import router from './router'
 import { autoAnimatePlugin } from '@formkit/auto-animate/vue'
 import Notifications from '@kyvg/vue3-notification'
+const VueUploadComponent = require('vue-upload-component')
 
 
 const app = createApp(App).use(router);
@@ -13,4 +14,5 @@ app.use(Vue3Lottie)
 app.use(Notifications)
 app.use(autoAnimatePlugin)
 app.mount('#app');
+app.component('file-upload', VueUploadComponent)
 

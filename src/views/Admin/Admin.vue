@@ -39,8 +39,7 @@ import {computed, onMounted, ref} from 'vue'
 import {useDataFetcher} from "@/composables/UseDataFetcher.ts";
 import draggable from 'vuedraggable'
 import axios from "axios";
-import { notify } from "@kyvg/vue3-notification";
-
+import {notify} from "@kyvg/vue3-notification";
 
 
 export default {
@@ -92,7 +91,6 @@ export default {
         });
         console.log('Item order updated successfully');
       } catch (error) {
-        console.log(error.request.response)
         notify({
           type: "error",
           text: error.request.response.toString(),
