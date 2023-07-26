@@ -12,7 +12,9 @@
         <td colspan="7">
           <div class="text-center p-5">
             <h4>Déposez des fichiers pour les télécharger<br/>ou</h4>
-            <label for="file" class="btn btn-lg btn-primary cursor-pointer">sélectionner des fichiers</label>
+            <label for="file" class="btn btn-lg btn-primary cursor-pointer">sélectionner des fichiers</label><br/>
+            <span>jpg / jpeg / png</span>
+
           </div>
         </td>
       </ul>
@@ -33,7 +35,7 @@
         <div class="flex flex-col space-y-4">
           <div >
             <label for="category" class="text-slate-700 font-semibold">Sélectionne la catégorie</label>
-            <select v-model="selectedCategory" id="category"
+            <select v-model="selectedCategory" id="category" required
                     class="block w-full mt-1 p-2 rounded-md border border-slate-500 focus:outline-none focus:border-blue-500">
               <option value="advice">Conseil</option>
               <option value="maintenance">Maintenance</option>
@@ -45,9 +47,9 @@
 
           <button type="button"
                   class="bg-transparent hover:bg-blue-500 text-slate-500 font-semibold hover:text-white py-2 px-4 border border-slate-500 hover:border-transparent rounded"
+                  :class=" selectedCategory === ''  ? 'pointer-events-none' : 'cursor-pointer'  "
                   v-if="!$refs.upload || !$refs.upload.active"
                   @click.prevent="$refs.upload.active = true">
-            <i class="fa fa-arrow-up" aria-hidden="true"></i>
             Upload
           </button>
         </div>
@@ -135,6 +137,10 @@ export default {
         }
 
         if (newFile.error && !oldFile.error) {
+          console.log(newFile)
+          this.files = [];
+          this.selectedCategory = "";
+
           notify({
             type: "error",
             text: "Une erreur est survenue",
