@@ -1,5 +1,5 @@
 <template>
-  <div class="flex justify-center">
+  <div class="flex justify-center p-4">
     <div class="upload bg-slate-300 rounded p-6 w-[400px] mt-6">
       <div v-if="files.length" class="grid grid-cols-3">
         <div v-for="file in files" :key="file.id">
@@ -19,34 +19,47 @@
       <div class="flex justify-center space-y-4">
         <file-upload
             class="btn btn-primary"
-            post-action="/upload/post"
+            :post-action="api"
             :multiple="true"
+            :data="categorie"
+            :headers="{Authorization: token}"
             :extensions="extensions"
             :accept="accept"
-            :drop="true"
-            :drop-directory="true"
             v-model="files"
             @input-filter="inputFilter"
             @input-file="inputFile"
             ref="upload">
         </file-upload>
-        <button type="button"
-                class="bg-transparent hover:bg-blue-500 text-slate-500 font-semibold hover:text-white py-2 px-4 border border-slate-500 hover:border-transparent rounded"
-                v-if="!$refs.upload || !$refs.upload.active"
-                @click.prevent="$refs.upload.active = true">
-          <i class="fa fa-arrow-up" aria-hidden="true"></i>
-          Start Upload
-        </button>
-        <button type="button" class="btn btn-danger" v-else @click.prevent="$refs.upload.active = false">
-          <i class="fa fa-stop" aria-hidden="true"></i>
-          Stop Upload
-        </button>
+        <div class="flex flex-col space-y-4">
+          <div >
+            <label for="category" class="text-slate-700 font-semibold">Sélectionne la catégorie</label>
+            <select v-model="selectedCategory" id="category"
+                    class="block w-full mt-1 p-2 rounded-md border border-slate-500 focus:outline-none focus:border-blue-500">
+              <option value="advice">Conseil</option>
+              <option value="maintenance">Maintenance</option>
+              <option value="support">Support</option>
+              <option value="install">Installation</option>
+              <!-- Add more options as needed -->
+            </select>
+          </div>
+
+          <button type="button"
+                  class="bg-transparent hover:bg-blue-500 text-slate-500 font-semibold hover:text-white py-2 px-4 border border-slate-500 hover:border-transparent rounded"
+                  v-if="!$refs.upload || !$refs.upload.active"
+                  @click.prevent="$refs.upload.active = true">
+            <i class="fa fa-arrow-up" aria-hidden="true"></i>
+            Upload
+          </button>
+        </div>
+
+
       </div>
     </div>
   </div>
 </template>
 <script>
 import FileUpload from 'vue-upload-component'
+import {notify} from "@kyvg/vue3-notification";
 
 export default {
   name: 'AdminImages',
@@ -56,15 +69,23 @@ export default {
       files: [],
       accept: 'image/png,image/jpeg,image/jpeg',
       extensions: 'jpg,jpeg,png',
+      api: process.env.VUE_APP_ROOT_API + 'media/add/images',
+      selectedCategory: "",
+      data: {},
     }
   },
   computed: {
-    isDropAllowed() {
-      // Check if any dropped file is not a PNG image
-      return this.files.every(file => file.type === 'image/png')
+    token() {
+      return `Bearer ${localStorage.getItem('token')}`
     },
+    categorie() {
+      // eslint-disable-next-line vue/no-side-effects-in-computed-properties
+      return {'categorie': this.selectedCategory}
+    }
+
   },
   methods: {
+
     inputFilter(newFile, oldFile) {
 
       if (newFile && newFile.error === "" && newFile.file && (!oldFile || newFile.file !== oldFile.file)) {
@@ -114,11 +135,20 @@ export default {
         }
 
         if (newFile.error && !oldFile.error) {
-          // error
+          notify({
+            type: "error",
+            text: "Une erreur est survenue",
+          });
         }
 
         if (newFile.success && !oldFile.success) {
           // success
+          notify({
+            type: "success",
+            text: "Success",
+          });
+          this.files = [];
+          this.selectedCategory = "";
         }
       }
 
