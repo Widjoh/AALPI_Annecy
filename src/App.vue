@@ -4,7 +4,7 @@
       <notifications class="mt-2"
       />
       <NavBar class="mb-12"></NavBar>
-      <div v-if="displayNavAdmin" class="text-slate-100 bg-slate-700 p-6 relative flex flex-col justify-between h-full space-y-4 mt-20 sm:items-center md:w-full">
+      <div v-if="displayNavAdmin" class="text-slate-100 bg-slate-700 p-6 relative flex flex-col justify-between h-full space-y-4 mt-20 sm:items-center w-full">
         <span>Bonjour JO</span>
         <nav class="space-x-2 flex" >
           <div v-for="link in adminLinks" :key="link.path">

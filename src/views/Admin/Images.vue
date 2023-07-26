@@ -1,6 +1,29 @@
 <template>
-  <div class="flex justify-center p-4">
-    <div class="upload bg-slate-300 rounded p-6 w-[400px] mt-6">
+  <div class="flex justify-center pb-10">
+    <div class="flex flex-col md:flex-row justify-center w-full items-center md:items-baseline md:space-x-16 md:ml-[190px] lg:ml-0">
+    <div class="md:fixed md:left-0 bg-slate-600 w-full md:w-[25%] lg:sm:w-[15%] md:h-full p-6 flex sm:flex-col space-y-4 flex flex-wrap ">
+      <button @click="showDiv = 'uploader'"
+              class="bg-transparent w-full hover:bg-blue-500 text-slate-100 font-semibold hover:text-white p-2 border border-slate-500 hover:border-transparent rounded">
+       Images
+      </button>
+      <button @click="showDiv = 'conseil'"
+              class="bg-transparent w-full hover:bg-blue-500 text-slate-100 font-semibold hover:text-white p-2 border border-slate-500 hover:border-transparent rounded">
+        Conseil
+      </button>
+      <button @click="showDiv = 'Maintenance'"
+              class="bg-transparent w-full hover:bg-blue-500 text-slate-100 font-semibold hover:text-white p-2 border border-slate-500 hover:border-transparent rounded">
+        Maintenance
+      </button>
+      <button @click="showDiv = 'Support'"
+              class="bg-transparent w-full hover:bg-blue-500 text-slate-100 font-semibold hover:text-white p-2 border border-slate-500 hover:border-transparent rounded">
+        Support
+      </button>
+      <button @click="showDiv = 'Installation'"
+              class="bg-transparent w-full hover:bg-blue-500 text-slate-100 font-semibold hover:text-white p-2 border border-slate-500 hover:border-transparent rounded">
+        Installation
+      </button>
+    </div>
+    <div v-if="showDiv === 'uploader'" class="upload bg-slate-300 rounded p-6 w-[300px] sm:w-[400px] mt-6 ">
       <div v-if="files.length" class="grid grid-cols-3">
         <div v-for="file in files" :key="file.id">
           <div>
@@ -18,7 +41,7 @@
           </div>
         </td>
       </ul>
-      <div class="flex justify-center space-y-4">
+      <div class="flex justify-center space-y-4 ">
         <file-upload
             class="btn btn-primary"
             :post-action="api"
@@ -33,7 +56,7 @@
             ref="upload">
         </file-upload>
         <div class="flex flex-col space-y-4">
-          <div >
+          <div>
             <label for="category" class="text-slate-700 font-semibold">Sélectionne la catégorie</label>
             <select v-model="selectedCategory" id="category" required
                     class="block w-full mt-1 p-2 rounded-md border border-slate-500 focus:outline-none focus:border-blue-500">
@@ -53,10 +76,21 @@
             Upload
           </button>
         </div>
-
-
       </div>
     </div>
+    <div v-if="showDiv === 'conseil'" class="support">
+      <span>Conseil bitch</span>
+    </div>
+    <div v-if="showDiv === 'Maintenance'" class="support">
+      <span>Maintenance bitch</span>
+    </div>
+    <div v-if="showDiv === 'Support'" class="support">
+      <span>Support bitch</span>
+    </div>
+    <div v-if="showDiv === 'Installation'" class="support">
+      <span>Installation bitch</span>
+    </div>
+  </div>
   </div>
 </template>
 <script>
@@ -72,8 +106,8 @@ export default {
       accept: 'image/png,image/jpeg,image/jpeg',
       extensions: 'jpg,jpeg,png',
       api: process.env.VUE_APP_ROOT_API + 'media/add/images',
-      selectedCategory: "",
-      data: {},
+      selectedCategory: null,
+      showDiv: 'uploader',
     }
   },
   computed: {
@@ -139,11 +173,11 @@ export default {
         if (newFile.error && !oldFile.error) {
           console.log(newFile)
           this.files = [];
-          this.selectedCategory = "";
+          //this.selectedCategory = "";
 
           notify({
             type: "error",
-            text: "Une erreur est survenue",
+            text: "Une erreur est survenue, réessaye enculé.",
           });
         }
 
