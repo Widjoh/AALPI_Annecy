@@ -1,13 +1,13 @@
 <template>
-  <div>
+  <div class="">
     <NavBar class="!w-full"/>
 
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
       <div class="mx-auto max-w-3xl">
         <router-view/>
       </div>
-      <footer class="bg-white">
+      <footer class=" fixed bottom-0 bg-white left-0 right-0">
         <div class="mx-auto max-w-7xl px-6 py-12 md:flex md:items-center md:justify-between lg:px-8">
           <div class="flex justify-center space-x-6 md:order-2">
             <a v-for="item in navigation" :key="item.name" :href="item.href" class="text-gray-400 hover:text-gray-500">
