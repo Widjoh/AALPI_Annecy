@@ -2,7 +2,7 @@
   <div class="home">
     <Header :title="headerData.title" :subtitle="headerData.subtitle"
             :back-ground-colors="headerData.background_colors"/>
-    <MainSection/>
+    <MainSection class="pb-56 md:!pb-40"/>
 
   </div>
 </template>
