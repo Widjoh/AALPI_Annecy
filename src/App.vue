@@ -1,19 +1,15 @@
 <template>
   <div>
-    <div v-if="routeName !== 'Login'">
-      <notifications class="mt-2"
-      />
-      <NavBar class="mb-12"></NavBar>
-      <div v-if="displayNavAdmin" class="text-slate-100 bg-slate-700 p-6 relative flex flex-col justify-between h-full space-y-4 mt-20 sm:items-center w-full">
-        <span>Bonjour JO</span>
-        <nav class="space-x-2 flex" >
-          <div v-for="link in adminLinks" :key="link.path">
-            <router-link class="bg-transparent w-full hover:bg-blue-500 text-slate-100 font-semibold hover:text-white p-2 border border-slate-500 hover:border-transparent rounded" :to="link.path">{{ link.name }}</router-link>
-          </div>
-        </nav>
+    <NavBar class="!w-full"/>
+
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+
+      <div class="mx-auto max-w-3xl">
+        <router-view/>
       </div>
     </div>
-    <router-view/>
+    <notifications class="mt-2"
+    />
   </div>
 </template>
 
@@ -21,7 +17,7 @@
 // @ is an alias to /src
 import NavBar from '@/components/navigation/NavBar.vue'
 import {useRoute} from "vue-router";
-import {computed, onMounted, ref, watch} from "vue";
+import {onMounted, ref, watch} from "vue";
 import {useLinks} from "@/composables/UseLinks.ts";
 
 export default {
@@ -42,16 +38,10 @@ export default {
       routeName.value = newValue.name;
     })
 
-    const routeWithNavAdmin = ['admin', 'adminImages', 'admin-tarifs', 'admin-contact']
-
-    const displayNavAdmin = computed(() => {
-      return routeWithNavAdmin.includes(useRoute().name)
-    })
 
     return {
       routeName,
       adminLinks,
-      displayNavAdmin
     }
 
   }

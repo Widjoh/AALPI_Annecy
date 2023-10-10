@@ -1,39 +1,28 @@
 <template>
   <div class="home">
-    <div v-if="homeData">
-      <Header :title="homeData.header?.title" :subtitle="homeData.header?.subtitle"
-              :back-ground-colors="homeData.background_colors"/>
-    </div>
-    <div v-if="homeData">
-      <Main :main-data="homeData.main"/>
-    </div>
+      <Header :title="headerData.title" :subtitle="headerData.subtitle"
+              :back-ground-colors="headerData.background_colors"/>
+<!--      <Main :main-data="homeData.main"/>-->
 
   </div>
 </template>
 
 <script>
 import Header from '@/components/header/Header.vue'
-import Main from '@/components/main/Main.vue'
-import {useDataFetcher} from "@/composables/UseDataFetcher.ts";
-import {onMounted} from "vue";
+import {UseHeader} from "@/composables/UseHeader.ts";
 
 export default {
   name: 'HomeView',
   components: {
     Header,
-    Main
+
   },
   setup() {
 
-    const {homeData, loading, error, fetchHomeData} = useDataFetcher();
-    onMounted(() => {
-      fetchHomeData();
-    });
-    return {
-      homeData,
-      loading,
-      error,
+    const { headerData} = UseHeader();
 
+    return {
+      headerData
     };
   },
 
