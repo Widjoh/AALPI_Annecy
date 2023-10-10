@@ -140,7 +140,7 @@ export default {
 
 </script>
 
-<style>
+<style scoped>
 .grid {
   display: grid;
   grid-gap: 1px;
