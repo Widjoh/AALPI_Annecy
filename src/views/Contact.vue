@@ -8,7 +8,7 @@
     </div>
     <div class="mx-auto mt-20 max-w-lg grid md:grid-cols-2 gap-12 mr-12">
       <div class="flex gap-x-6">
-        <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-indigo-600">
+        <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[#56C2DF]">
           <PhoneIcon class="h-6 w-6 text-white" aria-hidden="true" />
         </div>
         <div>
@@ -18,7 +18,7 @@
         </div>
       </div>
       <div class="flex gap-x-6">
-        <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-indigo-600">
+        <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[#56C2DF]">
           <ChatBubbleLeftRightIcon class="h-6 w-6 text-white" aria-hidden="true" />
         </div>
         <div>
