@@ -10,14 +10,13 @@
       <footer class=" fixed bottom-0 bg-white left-0 right-0">
         <div class="mx-auto max-w-7xl px-6 py-12 md:flex md:items-center md:justify-between lg:px-8">
           <div class="flex justify-center space-x-6 md:order-2">
-            <a v-for="item in navigation" :key="item.name" :href="item.href" class="text-gray-400 hover:text-gray-500">
+            <a v-for="item in navigation" :key="item.name" :href="item.href" class="text-gray-400 hover:text-gray-500" target="_blank">
               <span class="sr-only">{{ item.name }}</span>
               <component :is="item.icon" class="h-6 w-6" aria-hidden="true"/>
             </a>
           </div>
           <div class="mt-8 md:order-1 md:mt-0">
-            <p class="text-center text-xs leading-5 text-gray-500">&copy; 2020 Your Company, Inc. All rights
-              reserved.</p>
+            <p class="text-center text-xs leading-5 text-gray-500 font-classic">&copy; 2023 AALPI INFORMATIQUE </p>
           </div>
         </div>
       </footer>
@@ -49,7 +48,7 @@ watch(route, (old, newValue) => {
 const navigation = [
   {
     name: 'Facebook',
-    href: '#',
+    href: 'https://www.facebook.com',
     icon: defineComponent({
       render: () =>
           h('svg', {fill: 'currentColor', viewBox: '0 0 24 24'}, [
@@ -63,7 +62,7 @@ const navigation = [
   },
   {
     name: 'Instagram',
-    href: '#',
+    href: 'https://www.instagram.com',
     icon: defineComponent({
       render: () =>
           h('svg', {fill: 'currentColor', viewBox: '0 0 24 24'}, [
@@ -77,7 +76,7 @@ const navigation = [
   },
   {
     name: 'Twitter',
-    href: '#',
+    href: 'https://www.twitter.com',
     icon: defineComponent({
       render: () =>
           h('svg', {fill: 'currentColor', viewBox: '0 0 24 24'}, [

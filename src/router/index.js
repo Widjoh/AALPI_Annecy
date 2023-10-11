@@ -20,6 +20,10 @@ const routes = [
         name: 'contact',
         component: Contact,
     },
+    {
+        path: '/:catchAll(.*)',
+        redirect: '/', // Redirect to the home route
+    }
 ];
 
 const router = createRouter({

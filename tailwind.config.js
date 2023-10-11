@@ -2,7 +2,12 @@
 module.exports = {
     content: ['./src/**/*.{html,js,ts,vue}', './components/**/*.{html,js}',],
     theme: {
-        extend: {},
+        extend: {
+            fontFamily: {
+                classic: ['texgyreadventor-regular', 'sans'],
+                important: ['Osiris', 'sans'],
+            },
+        },
     },
     plugins: [],
 }

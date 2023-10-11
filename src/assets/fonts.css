@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'texgyreadventor-regular';
+    src: url('@/assets/fonts/texgyreadventor-regular.otf') format('woff2');
+    /* Add other font formats if necessary */
+}
+
+@font-face {
+    font-family: 'Osiris';
+    src: url('@/assets/fonts/Osiris.woff2') format('opentype');
+    /* Add other font formats if necessary */
+}

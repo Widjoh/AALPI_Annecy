@@ -14,9 +14,9 @@
         </div>
         <div>
           <div class="text-base leading-7 text-gray-700 lg:max-w-lg">
-            <h1 class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">{{main.name}}</h1>
+            <h1 class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl font-important">{{main.name}}</h1>
             <div class="max-w-xl">
-              <p class="mt-6">{{main.description}}</p>
+              <p class="mt-6 font-classic">{{main.description}}</p>
             </div>
           </div>
         </div>
