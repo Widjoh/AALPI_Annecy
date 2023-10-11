@@ -2,7 +2,7 @@
   <div class="bg-white pb-56 md:!pb-40 pt-10">
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
       <div class="mx-auto max-w-4xl text-center">
-        <p class="mt-2 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl font-important">{{infoHeader.title}}</p>
+        <p class="mt-2 text-4xl font-bold tracking-tight text-gray-900 sm:text-4xl font-important">{{infoHeader.title}}</p>
       </div>
       <p class="mx-auto mt-6 max-w-2xl text-center text-lg leading-8 text-gray-600 font-classic">{{infoHeader.description}}</p>
 

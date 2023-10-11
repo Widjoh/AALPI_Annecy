@@ -1,7 +1,7 @@
 <template>
   <div class="isolate bg-white px-6 pb-20 sm:pb-28  pt-10 lg:px-8">
     <div class="mx-auto max-w-2xl sm:text-center">
-      <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl mb-6 font-important">Restons en contact</h2>
+      <h2 class="mt-2 text-4xl font-bold tracking-tight text-gray-900 sm:text-4xl font-important mb-10">Restons en contact</h2>
     </div>
     <div class="hidden md:flex relative overflow-hidden rounded-3xl bg-gray-900 px-6 pb-9 pt-64 shadow-2xl sm:px-12 lg:max-w-lg lg:px-8 lg:pb-8 xl:px-10 xl:pb-10 mx-auto">
       <img class="absolute inset-0 h-full w-full object-cover" :src="require(`@/assets/images/annecy.jpg`)" alt="" />
