@@ -6,18 +6,18 @@ import Contact from '../views/Contact.vue';
 const routes = [
     {
         path: '/',
-        name: 'home',
+        name: 'Accueil',
         component: Home,
     },
 
     {
         path: '/pricing',
-        name: 'tarifs',
+        name: 'Tarifs',
         component: Pricing,
     },
     {
         path: '/contact',
-        name: 'contact',
+        name: 'Contact',
         component: Contact,
     },
     {
@@ -31,6 +31,10 @@ const router = createRouter({
     routes,
 });
 
+router.beforeEach((to, from, next) => {
+    document.title = to.name;
+    next();
+});
 // Add a navigation guard to check authentication status
 
 // router.beforeEach(async (to, from, next) => {
