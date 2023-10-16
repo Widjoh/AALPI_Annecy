@@ -1,6 +1,6 @@
 <template>
   <div class="relative">
-    <img class="h-60 w-full" :src="require(`@/assets/svg/LogoAALPI_Couleur.svg`)" alt="AALPI LOGO" />
+    <img class="h-96 w-full" :src="require(`@/assets/svg/LogoAALPI_Couleur.svg`)" alt="AALPI LOGO" />
 
     <Header :title="headerData.title" :subtitle="headerData.subtitle"
             :back-ground-colors="headerData.background_colors"/>
