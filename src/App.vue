@@ -1,6 +1,7 @@
 <template>
   <div class="">
     <NavBar class="!w-full"/>
+    <img class=" hidden absolute md:block md:h-40 md:w-40 w-full right-10" :src="require(`@/assets/images/help.jpg`)" alt="Logo aide a la personne" />
 
     <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 

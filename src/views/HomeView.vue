@@ -1,5 +1,7 @@
 <template>
-  <div class="home">
+  <div class="relative">
+    <img class="h-60 w-full" :src="require(`@/assets/svg/LogoAALPI_Couleur.svg`)" alt="AALPI LOGO" />
+
     <Header :title="headerData.title" :subtitle="headerData.subtitle"
             :back-ground-colors="headerData.background_colors"/>
     <MainSection class="pb-56 md:!pb-40"/>
