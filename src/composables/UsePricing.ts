@@ -31,7 +31,7 @@ export const UsePricing = () => {
 
     const sections = [
         {
-            name: `50% de réduction d'impôt`,
+            name: `Une intervention correspond à 30 minutes`,
             features: [
                 { name: 'Formule à la demande', tiers: { Intervention: '44 €', Montants: '44 €', Reel: '22 €' } },
                 { name: 'Formule 5 tickets', tiers: { Intervention: '39 €', Montants: '195 €', Reel: '97.5 €' } },

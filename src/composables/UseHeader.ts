@@ -4,9 +4,9 @@ import { ArrowPathIcon, CloudArrowUpIcon, FingerPrintIcon, LockClosedIcon } from
 
 export function UseHeader() {
 
-    const headerData = {title: "HOME PAGE TEST", subtitle: "SUBTITLE", background_colors: "#940B92"}
+    const headerData = {title: "Interventions à domicile   ", subtitle: ".", background_colors: "#940B92"}
 
-    // Inutile
+    // 
    /* const features = [
         {
             name: 'Installation test',

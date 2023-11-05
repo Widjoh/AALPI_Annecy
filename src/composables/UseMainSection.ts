@@ -2,27 +2,28 @@
 export const useMainSection = () => {
     const mainSectionData = [
         {
-            name: 'Installation test',
+            name: 'Dépannage & assistance',
             description:
-                'Morbi viverra dui mi arcu sed. Tellus semper adipiscing suspendisse semper morbi. Odio urna massa nunc massa. ',
+                'Dépannage ordinateurs fixes et portables. Installation de matériel. Configuration (remise à neuf, débogage, formatage...). Mise à jour matérielle et/ou logicielle. Conseils d’achat et aide au choix de matériel  ',
+           
             imagePath: 'ensemble',
         },
         {
-            name: 'Conseil',
+            name: 'Formation',
             description:
-                'Sit quis amet rutrum tellus ullamcorper ultricies libero dolor eget. Sem sodales gravida quam turpis enim lacus amet.',
+                'Microsoft Office (Word,Excel,Power Point...). Windows (explorateur Windows, réseau, configuration générale…). Internet. Emails. gestion des imprimantes. réseaux sociaux. Diagnostique de panne…',
             imagePath: 'conseil',
         },
         {
-            name: 'Maintenance',
+            name: 'Assistance démarches en ligne',
             description:
-                'Quisque est vel vulputate cursus. Risus proin diam nunc commodo. Lobortis auctor congue commodo diam neque.',
+                'Litiges opérateurs (Orange, Free, SFR…). Optimisation des forfaits (téléphonie & Internet). Aide aux démarches en ligne. Assurance maladie (ameli.fr). Retraite / assurance vieillesse (lassuranceretraite.fr). Titres sécurisés, pièces d’identité, passeports, cartes grises (ants.gouv.fr). Impôts (impots.gouv.fr).',
             imagePath: 'vieux',
         },
         {
-            name: 'Support',
+            name: 'Aide personnalisée',
             description:
-                'Arcu egestas dolor vel iaculis in ipsum mauris. Tincidunt mattis aliquet hac quis. Id hac maecenas ac donec pharetra eget.',
+                'Expliquez vos attentes et vos besoins, nous verrons ensemble de quelle manière je pourrais vous aider.',
             imagePath: 'bug_pc',
         },
     ]
