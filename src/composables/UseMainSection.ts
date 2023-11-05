@@ -2,10 +2,10 @@
 export const useMainSection = () => {
     const mainSectionData = [
         {
-            name: 'Installation',
+            name: 'Installation test',
             description:
-                'Morbi viverra dui mi arcu sed. Tellus semper adipiscing suspendisse semper morbi. Odio urna massa nunc massa.',
-            imagePath: 'aide',
+                'Morbi viverra dui mi arcu sed. Tellus semper adipiscing suspendisse semper morbi. Odio urna massa nunc massa. ',
+            imagePath: 'ensemble',
         },
         {
             name: 'Conseil',
@@ -26,6 +26,7 @@ export const useMainSection = () => {
             imagePath: 'bug_pc',
         },
     ]
+
 
     return {mainSectionData}
 }

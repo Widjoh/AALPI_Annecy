@@ -4,11 +4,12 @@ import { ArrowPathIcon, CloudArrowUpIcon, FingerPrintIcon, LockClosedIcon } from
 
 export function UseHeader() {
 
-    const headerData = {title: "HOME PAGE", subtitle: "SUBTITLE", background_colors: "#940B92"}
+    const headerData = {title: "HOME PAGE TEST", subtitle: "SUBTITLE", background_colors: "#940B92"}
 
-    const features = [
+    // Inutile
+   /* const features = [
         {
-            name: 'Installation',
+            name: 'Installation test',
             description:
                 'Morbi viverra dui mi arcu sed. Tellus semper adipiscing suspendisse semper morbi. Odio urna massa nunc massa.',
             icon: CloudArrowUpIcon,
@@ -31,9 +32,9 @@ export function UseHeader() {
                 'Arcu egestas dolor vel iaculis in ipsum mauris. Tincidunt mattis aliquet hac quis. Id hac maecenas ac donec pharetra eget.',
             icon: FingerPrintIcon,
         },
-    ]
+    ]*/
 
 
 
-    return {features, headerData};
+    return { headerData};
 }
