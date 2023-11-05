@@ -4,7 +4,7 @@ import { ArrowPathIcon, CloudArrowUpIcon, FingerPrintIcon, LockClosedIcon } from
 
 export function UseHeader() {
 
-    const headerData = {title: "Interventions à domicile   ", subtitle: ".", background_colors: "#940B92"}
+    const headerData = {title: "Interventions à domicile", subtitle: "", background_colors: "#940B92"}
 
     // 
    /* const features = [

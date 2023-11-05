@@ -1,7 +1,7 @@
 export const UsePricing = () => {
     const infoHeader = {
         title: 'Tarifs',
-        description: 'Entreprise enregistrée par l’Etat en tant que prestataire de service à la personne. Elle vous permet de bénéficier d’une réduction ou d’un crédit d’impôt de 50%, dans la limite de 1 500 euros de remboursement par an'
+        description: 'Entreprise enregistrée par l’Etat en tant que prestataire de service à la personne. Elle vous permet de bénéficier d’une réduction ou d’un crédit d’impôt de 50%, dans la limite de 1 500 euros de remboursement par an.'
     }
 
 

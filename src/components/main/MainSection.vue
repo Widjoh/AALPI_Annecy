@@ -15,6 +15,12 @@
         <div>
           <div class="text-base leading-7 text-gray-700 lg:max-w-lg">
             <h1 class="mt-2 text-2xl font-bold tracking-tight text-gray-900 sm:text-2xl font-important">{{main.name}}</h1>
+            <div v-if='main.lists' class='mt-6'>
+             <div  v-for='list in main.lists' :key='list' class='flex flex-col space-y-3' >
+            <span class='font-classic '>- {{list}}</span>
+            </div>
+           
+            </div>
             <div class="max-w-xl">
               <p class="mt-6 font-classic">{{main.description}}</p>
             </div>

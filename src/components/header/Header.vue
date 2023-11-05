@@ -3,7 +3,7 @@
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
       <div class="mx-auto max-w-2xl lg:text-center">
         <p class="mt-2 text-4xl font-bold tracking-tight text-gray-900 sm:text-4xl font-important">{{title}}</p>
-        <p class="mt-6 text-lg leading-8 text-gray-600 font-classic">{{subtitle}}.</p>
+        <p v-if="subtitle" class="mt-6 text-lg leading-8 text-gray-600 font-classic">{{subtitle}}</p>
       </div>
 <!--      <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">-->
 <!--        <dl class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">-->

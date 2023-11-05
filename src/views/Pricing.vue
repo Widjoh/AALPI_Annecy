@@ -56,7 +56,7 @@
             </tr>
             <template v-for="(section, sectionIdx) in sections" :key="section.name">
               <tr>
-                <th scope="colgroup" colspan="4" :class="[sectionIdx === 0 ? '' : 'pt-16', 'pb-4 text-sm font-semibold leading-6 text-gray-900 font-classic']">
+                <th scope="colgroup"  colspan="4" :class="[sectionIdx === 0 ? '' : 'pt-16', 'pb-4 text-sm font-semibold leading-6 text-gray-900 font-classic text-[10px]']">
                   {{ section.name }}
                   <div class="absolute inset-x-8 mt-4 h-px bg-gray-900/10" />
                 </th>
