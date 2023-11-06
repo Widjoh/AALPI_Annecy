@@ -9,7 +9,7 @@ export const useMainSection = () => {
         {
             name: 'Formation',
             lists:
-            [ 'Microsoft Office (Word,Excel,Power Point...).', 'Windows (explorateur Windows, réseau, configuration générale…).',  'Internet. Emails. gestion des imprimantes.', 'réseaux sociaux.', 'Diagnostique de panne…'],
+            [ 'Microsoft Office (Word,Excel,Power Point...).', 'Windows (explorateur Windows, réseau, configuration générale…).',  'Internet. Emails. gestion des imprimantes.', 'Réseaux sociaux.', 'Diagnostique de panne…'],
             imagePath: 'conseil',
         },
         {
