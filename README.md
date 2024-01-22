@@ -1,4 +1,4 @@
-# annecy_frontend
+# AALPI_Annecy
 
 ## Project setup
 ```
